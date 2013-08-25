@@ -1,10 +1,10 @@
 <?php
-class Favicon_Badge extends Plugin {
+class Favicon extends Plugin {
 
 	function about() {
-		return array(1.0,
-			"Add a badge to favicon",
-			"ZeGuigui");
+		return array(1.1,
+			"Show unread count on favicon",
+			"ZeGuigui, MageFroh");
 	}
 
 	function get_js() {
@@ -16,5 +16,6 @@ class Favicon_Badge extends Plugin {
 	function api_version() {
 		return 2;
 	}
- }
+
+}
 ?>
