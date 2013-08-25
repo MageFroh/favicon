@@ -167,8 +167,7 @@
 
       prepareCanvas();
       image.onload = function() { 
-        context.fillStyle = "rgba(0,0,0,1)"
-        context.fillRect(0,0,16,16);
+        context.clearRect(0,0,16,16);
         context.drawImage(image,0,0,16,16); // reset any previous badge
         drawText(context, message);
         favicon.change(canvas.toDataURL("image/png"));
