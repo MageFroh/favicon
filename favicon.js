@@ -27,7 +27,7 @@
 
 (function(namespace) {
 
-  var scrollTimer, animateTimer, iconSequence, animateIndex, iconURL, isBadged;
+  var scrollTimer, animateTimer, iconSequence, animateIndex, iconURL, isBadged, badgeMessage;
 
   function preloadIcons() {
     var dummyImageForPreloading = document.createElement("img");
@@ -162,6 +162,13 @@
     },
 
     badge: function(message) {
+      if (badgeMessage && message && badgeMessage == message) {
+        return;
+      }
+      if (!badgeMessage && !message) {
+        return;
+      }
+      badgeMessage = message;
       if (!isBadged) {
         iconURL = favicon.url();
       }
