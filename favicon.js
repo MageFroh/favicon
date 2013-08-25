@@ -162,7 +162,9 @@
     },
 
     badge: function(message) {
-      iconURL = favicon.url();
+      if (!isBadged) {
+        iconURL = favicon.url();
+      }
       isBadged = true;
 
       prepareCanvas();
