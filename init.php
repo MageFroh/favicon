@@ -13,5 +13,8 @@ class Favicon_Badge extends Plugin {
 		return $js1 . "\n" . $js2;
 	}
 
-}
+	function api_version() {
+		return 2;
+	}
+ }
 ?>
