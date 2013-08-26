@@ -77,17 +77,13 @@
   function drawText(context, message) {
     if (message) message = ""+message;
     if (message && message.length) {
-
-      var textHeight = 10;
-      context.font = "bold "+textHeight+"px sans-serif";
-      context.fillStyle = "#f00";  
-      var width = context.measureText(message).width+2;
-      var height = textHeight-2;
-      context.fillRect(16-width,16-height,width,height);
-
-      context.fillStyle = "white";  
+      context.font = "bold 10px sans-serif";
       context.textAlign = "right";
       context.textBaseline = "alphabetic"; 
+      context.lineWidth = 2;
+      context.strokeStyle = "#ffffff";  
+      context.strokeText(message,15,15,16);
+      context.fillStyle = "#ff0000";
       context.fillText(message,15,15,16);
     }
 
