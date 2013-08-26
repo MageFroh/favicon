@@ -82,7 +82,7 @@
       context.font = "bold "+textHeight+"px sans-serif";
       context.fillStyle = "#f00";  
       var width = context.measureText(message).width+2;
-      var height = textHeight;
+      var height = textHeight-2;
       context.fillRect(16-width,16-height,width,height);
 
       context.fillStyle = "white";  
