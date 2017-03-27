@@ -53,7 +53,6 @@
     for (var i=0; i<links.length; i++) {
       if (links[i].rel=="shortcut icon") head.removeChild(links[i]);
     }    
-    if (faviconLink) head.removeChild(faviconLink); // unnecessary, but conserves memory
     faviconLink = document.createElement("link");
     faviconLink.rel = "shortcut icon";
     faviconLink.href=url;
