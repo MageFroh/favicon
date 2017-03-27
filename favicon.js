@@ -49,11 +49,15 @@
   var faviconLink;
   function addLink(url) {
     var head = getHead();
+    var links = document.getElementsByTagName("link");
+    for (var i=0; i<links.length; i++) {
+      if (links[i].rel=="shortcut icon") head.removeChild(links[i]);
+    }    
     if (faviconLink) head.removeChild(faviconLink); // unnecessary, but conserves memory
     faviconLink = document.createElement("link");
     faviconLink.rel = "shortcut icon";
-    faviconLink.type = "image/x-icon";
     faviconLink.href=url;
+    faviconLink.sizes="16x16";
     head.appendChild(faviconLink);
   }
 
@@ -159,9 +163,6 @@
 
     badge: function(message) {
       if (badgeMessage && message && badgeMessage == message) {
-        return;
-      }
-      if (!badgeMessage && !message) {
         return;
       }
       badgeMessage = message;
